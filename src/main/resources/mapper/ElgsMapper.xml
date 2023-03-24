@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.example.springboot_sewage.mapper.ElgsMapper">
+    <resultMap type="com.example.springboot_sewage.pojo.Elgs" id="ElgsResult">
+        <id property="id" column=""/>
+        <result column="pollutantOrProjectName" property="pollutantOrProjectName"/>
+        <result column="standard"   property="standard"/>
+        <result column="criterion"   property="criterion"/>
+        <result column="norm"   property="norm"/>
+        <result column="monitoringMosition"   property="monitoringMosition"/>
+    </resultMap>
+    <!--  根据id查询全部信息-->
+    <select id="findElgss" resultType="com.example.springboot_sewage.pojo.Elgs">
+        SELECT *
+        FROM elgs
+    </select>
+
+    <!--添加-->
+    <!-- 添加简历信息-->
+    <insert id="insertElgs">
+        INSERT INTO elgs
+        VALUES (default , #{pollutantOrProjectName}, #{standard}, #{criterion}, #{norm}, #{monitoringMosition})
+    </insert>
+
+
+    <!--    &lt;!&ndash; 修改更新简历信息名字 &ndash;&gt;-->
+    <update id="updateElgs">
+        UPDATE elgs
+        <set>
+            <if test="pollutantOrProjectName!=null and pollutantOrProjectName!=''">
+            pollutantOrProjectName = #{pollutantOrProjectName},</if>
+            <if test="standard!=null and standard!=''">standard = #{standard},</if>
+            <if test="criterion!=null and criterion!=''">criterion = #{criterion},</if>
+            <if test="norm!=null and norm!=''">norm = #{norm},</if>
+            <if test="monitoringMosition!=null and monitoringMosition!=''">
+            monitoringMosition = #{monitoringMosition},</if>
+
+        </set>
+        WHERE id = #{id}
+    </update>
+
+
+
+
+    <!--    &lt;!&ndash;  根据id，删除简历信息&ndash;&gt;-->
+    <delete id="deleteElgs">
+        DELETE
+        FROM elgs
+        WHERE id = #{id}
+    </delete>
+
+</mapper>

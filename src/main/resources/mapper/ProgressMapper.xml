@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.example.springboot_sewage.mapper.ProgressMapper">
+    <resultMap type="com.example.springboot_sewage.pojo.Progress" id="ProgressResult">
+        <id property="id" column=""/>
+        <result column="villageName" property="villageName"/>
+        <result column="startWork"   property="startWork"/>
+        <result column="plannedTime"   property="plannedTime"/>
+        <result column="cutPavement"   property="cutPavement"/>
+        <result column="brokenPavement"   property="brokenPavement"/>
+
+        <result column="developPavement" property="developPavement"/>
+        <result column="buriedPipe"   property="buriedPipe"/>
+        <result column="backfillTheEarth"   property="backfillTheEarth"/>
+        <result column="pavementRestoration"   property="pavementRestoration"/>
+        <result column="mainInspectionWell"   property="mainInspectionWell"/>
+
+        <result column="branchCheckWell" property="branchCheckWell"/>
+        <result column="terminalConstruction"   property="terminalConstruction"/>
+    </resultMap>
+
+    <!--  根据id查询全部信息-->
+    <select id="findProgresss" resultType="com.example.springboot_sewage.pojo.Progress">
+        SELECT *
+        FROM progress
+    </select>
+
+    <!--添加-->
+    <insert id="insertProgress">
+        INSERT INTO progress
+        VALUES (default , #{villageName}, #{startWork}, #{plannedTime}, #{cutPavement}, #{brokenPavement}
+        ,#{developPavement}, #{buriedPipe}, #{backfillTheEarth}, #{pavementRestoration}, #{mainInspectionWell}
+        ,#{branchCheckWell}, #{terminalConstruction})
+    </insert>
+
+
+    <!--    &lt;!&ndash; 修改更新简历信息名字 &ndash;&gt;-->
+    <update id="updateProgress">
+        UPDATE progress
+        <set>
+            <if test="villageName!=null and villageName!=''">villageName = #{villageName},</if>
+            <if test="startWork!=null and startWork!=''">startWork = #{startWork},</if>
+
+            <if test="plannedTime!=null">plannedTime = #{plannedTime},</if>
+
+            <if test="cutPavement!=null and cutPavement!=''">cutPavement = #{cutPavement},</if>
+            <if test="brokenPavement!=null and brokenPavement!=''">brokenPavement = #{brokenPavement},</if>
+            <if test="developPavement!=null and developPavement!=''">developPavement = #{developPavement},</if>
+            <if test="buriedPipe!=null and buriedPipe!=''">buriedPipe = #{buriedPipe},</if>
+            <if test="backfillTheEarth!=null and backfillTheEarth!=''">backfillTheEarth = #{backfillTheEarth},</if>
+            <if test="pavementRestoration!=null and pavementRestoration!=''">pavementRestoration = #{pavementRestoration},</if>
+            <if test="mainInspectionWell!=null and mainInspectionWell!=''">mainInspectionWell = #{mainInspectionWell},</if>
+            <if test="branchCheckWell!=null and branchCheckWell!=''">branchCheckWell = #{branchCheckWell},</if>
+            <if test="terminalConstruction!=null and terminalConstruction!=''">terminalConstruction = #{terminalConstruction},</if>
+
+        </set>
+        WHERE id = #{id}
+    </update>
+
+
+
+
+    <!--    &lt;!&ndash;  根据id，删除简历信息&ndash;&gt;-->
+    <delete id="deleteProgress">
+        DELETE
+        FROM progress
+        WHERE id = #{id}
+    </delete>
+
+
+</mapper>

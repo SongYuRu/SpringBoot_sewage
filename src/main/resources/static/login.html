@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <title>农村生活污水治理地形图测绘数据入库系统</title>
+    <link rel="stylesheet" href="./css/google.css"/>
+    <link rel="stylesheet" href="./css/semantic.css"/>
+    <link rel="stylesheet" href="./css/main.css"/>
+    <!--    引入Layui-->
+    <link rel="stylesheet" type="text/css" href="https://www.layuicdn.com/layui/css/layui.css"/>
+    <script src="https://www.layuicdn.com/layui/layui.js"></script>
+
+    <script type="text/javascript" src="./js/jquery-2.1.4.min.js"></script>
+    <script type="text/javascript" src="./js/semantic.js"></script>
+    <script type="text/javascript" src="./js/base.js"></script>
+    <script type="text/javascript" src="./js/login.js"></script>
+    <style type="text/css">
+        body {
+
+            font-family: Verdana, Arial, Helvetica, sans-serif;
+            margin: 0;
+
+        }
+
+        .ui.grid {
+            margin: 0;
+        }
+
+        .ui.grid{
+            margin: 0;
+            /*设置离页面底部的距离*/
+            min-height: 650px;
+        }
+        .ui.white {
+            color:ivory;
+        }
+
+        .text-center {
+            text-align: center;
+        }
+
+        .ui.login-div {
+            margin: 20px 0 0 0;
+        }
+        .bg{
+            background-image: url("images/demo14.jpg");
+            background-size: 105%;
+        }
+
+
+    </style>
+</head>
+
+<body class="bg">
+<div class="ui login-header">
+    <a href="javascript:;" onclick="shutdown()">
+        <i  class ="container" style="text-align: left;  color:black;">
+            <img class ="img" width="200" src="images\demo.jpg" >
+        </i></a>
+</div>
+
+
+
+<div class="ui three column stackable grid login-div"  style="margin-top: 250px;   margin-left: 200px;  margin-right: 200px;  text-align: center; ">
+    <div class="column" ></div>
+
+    <div class="column" >
+        <form id="login" class="ui fluid form segment" action="./home.html"  style="border: 10px solid #0368ac; background: transparent;  font-size: 14px;  height: 350px;">
+            <div class="inline field"><strong style="color:red"></strong></div>
+            <div><h1> <i class="settings icon"></i>管理员登录页面</h1></div>
+            <div>&nbsp;</div>
+            <div class="field" style="font-size: 14px;">
+                <div>&nbsp;</div>
+                <label class="" style="font-size: 14px;">用户名</label>
+                <div class="ui left icon input" style="font-size: 14px; width: 400px;">
+                    <input type="text"  style="font-size: 14px;"name="username" id = "username" placeholder="Enter username" value="admin">
+                    <i class="user icon"></i>
+                    <div class="ui corner label">
+                        <i class="icon asterisk"></i>
+                    </div>
+                </div>
+            </div>
+            <div class="field" style="font-size: 14px;">
+                <div>&nbsp;</div>
+                <label class="" style="font-size: 14px;">密码</label>
+                <div class="ui left icon input"  style="width: 400px;">
+                    <!--value="admin" 只是在输入框里面显示-->
+                    <input type="password" name="password" id="password" placeholder="Enter password" value="admin"> <i class="lock icon"></i>
+                    <div class="ui corner label">
+                        <i class="icon asterisk"></i>
+                    </div>
+                </div>
+            </div>
+            <div class="inline field" style="text-align: center;">
+                <div>&nbsp;</div>
+                <input type="button" value="登录" class="ui blue submit button">
+            </div>
+            <!--底部logo-->
+        </form>
+    </div>
+    <div class="column"></div>
+</div>
+
+<h2 style=" text-align: center;   height: 50px;  ">
+    <div class="text-center "style="color: white" >版权所有：湖北玖誉土地评估勘测有限公司</div>
+</h2>
+</body>
+
+</html>

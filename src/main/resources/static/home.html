@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8"/>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <title>交通建设不动产产权转移登记入库系统</title>
+    <link rel="stylesheet" href="./css/google.css"/>
+    <link rel="stylesheet" href="./css/semantic.css"/>
+    <link rel="stylesheet" href="./css/main.css"/>
+    <script type="text/javascript" src="./js/jquery-2.1.4.min.js"></script>
+    <script type="text/javascript" src="./js/semantic.js"></script>
+    <script type="text/javascript" src="./js/base.js"></script>
+    <script type="text/javascript" src="./js/elgs.js" charset="utf-8"></script>
+    <script type="text/javascript" src="./js/home.js" charset="utf-8"></script>
+
+    <style type="text/css">
+
+        .ui.grid{
+            margin: 0;
+            /*设置离页面底部的距离*/
+            min-height: 850px;
+            text-align: center;
+        }
+
+    </style>
+</head>
+<body>
+<div>
+    <!--header-->
+    <div class="ui clearing segment"  style="background-color:#2f2f4f "  >
+        <h3 class="ui left floated header " style="background-color:#2f2f4f " >
+            <a href="javascript:;" onclick="shutdown()">
+                <i  class ="container" style="  background-color:#2f2f4f; color:black;">
+                    <img class ="img" width="200" src="images\demo01.jpg" >
+                </i>
+            </a>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            农村生活污水治理地形图测绘数据入库系统
+        </h3>
+        <div class="ui right floated header"  >
+            <div class="ui horizontal list"  >
+                <div class="item">
+                    <a href="javascript:;" id="usernameHint"></a>
+                    <a href="javascript:;" onclick="shutdown()">
+                        <i class="power icon">
+                        </i></a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="ui grid"  style="background-color: white" >
+        <div class="two wide column"  style="background-color:#2f2f4f  ; "><!--  定义两个宽度的列 -->
+            <div class="ui inverted segment" ><!--Inverted反色，设置按钮颜色-->
+                <div class="ui inverted accordion"  ><!--accordion（折叠面板）设置折叠的面板相当于一个大标题下面还可以插入小标题-->
+
+                    <div class="title" style="background-color:#2f2f4f " >
+                        <i class="dropdown icon"></i> 首页
+                    </div>
+                    <!-- header就是产生标题的效果 -->
+                    <!-- dividing或者divider产生一条分割线 -->
+
+                    <div class="content item vertical tabular menu">
+                        <div class="transition hidden header item" data-tab="one">
+                            欢迎进入</div>
+                    </div>
+
+                    <div class="title active" style="background-color:#2f2f4f " ><!--定义一个标题菜单-->
+                        <i class="dropdown icon"></i> 治理信息
+                    </div>
+                    <div class="content active item vertical tabular menu">
+                        <div class="transition visible header item" data-tab="six">生活污水排放限值</div>
+                        <div class="transition visible header item" data-tab="seven">生活污水治理进度</div>
+                        <div class="transition visible header item" data-tab="eight">生活污水污水来源</div>
+                    </div>
+
+                   <!-- 九-->
+                    <div class="title active" style="background-color:#2f2f4f " ><!--定义一个标题菜单-->
+                        <i class="dropdown icon"></i> 图片管理
+                    </div>
+                    <div>
+                        <div class="transition visible header item" data-tab="nine">图片信息列表</div>
+                    </div>
+                    <!-- 十-->
+                    <div class="title active" style="background-color:#2f2f4f " ><!--定义一个标题菜单-->
+                        <i class="dropdown icon"></i> 员工账号管理
+                    </div>
+                    <div>
+                        <div class="transition visible header item" data-tab="ten">员工登录账号信息</div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+
+
+        <div class="fourteen wide white column">
+
+            <!--six-->
+            <div class="ui active tab segment" data-tab="six">
+                <div class="ui grid">
+                    <div class="wide  column">
+                        <div class="ui tab segment active" data-tab="first">
+                            <div class="ui breadcrumb">
+                                <i class="home icon"></i> <a class="section">排放值信息表</a> <i
+                                    class="right angle icon divider"></i> <a class="section">排放值表信息列表</a>
+                            </div>
+                            <div class="btns">
+                                <div class="settings">
+                                    <div class="ui blue fade button" tabindex="0">
+                                        <div class="visible content" onclick="addAndUpdateElgs()">新增排放值信息</div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div style="clear: both;"></div>
+                            <div class="items" style="overflow: scroll">
+                                <!--定义一个表格-->
+                                <table class="ui sortable celled table ">
+                                    <thead>
+                                    <tr>
+                                        <th><i class="write square icon"></i></th>
+                                        <th colspan="8" style="text-align: left">农村生活污水治理地形图测绘数据入库系统</th>
+                                    </tr>
+                                    <tr style="text-align: center">
+                                        <th>序号</th>
+                                        <th>污染物或者项目名称</th>
+                                        <th>A标准</th>
+                                        <th>B标准</th>
+                                        <th>C标准</th>
+                                        <th>污染物排放监控位置</th>
+                                        <th>操作</th>
+                                    </tr>
+                                    </thead>
+                                    <tbody  id="ebody">
+
+                                    </tbody>
+
+                                    <tfoot>
+                                    <tr>
+                                        <th colspan="2">
+                                        <span>
+                                            共有<strong id="totalCount">0</strong>条数据,
+                                            共有<strong id="totalPage">0</strong>页,
+                                            当前是第<strong id="pageNum">0</strong>页
+										</span>
+                                        </th>
+                                        <th colspan="8">
+                                            <div id="pagination" class="ui right floated pagination menu">
+                                            </div>
+                                        </th>
+                                    </tr>
+                                    </tfoot>
+                                </table>
+
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+
+            <!--seven-->
+            <div class="ui tab segment" data-tab="seven">
+                <div class="ui grid">
+                    <div class="wide  column">
+                            <div class="ui breadcrumb">
+                                <i class="home icon"></i> <a class="section">治理进度信息表</a> <i
+                                    class="right angle icon divider"></i> <a class="section">治理进度信息列表</a>
+                            </div>
+                            <div class="btns1">
+                                <div class="settings">
+                                    <div class="ui blue fade button" tabindex="0">
+                                        <div class="visible content" onclick="addAndUpdateProgress()">新增治理进度信息</div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div style="clear: both;"></div>
+                            <div class="items" style="overflow: scroll">
+                                <!--定义一个表格-->
+                                <table class="ui sortable celled table ">
+                                    <thead>
+                                    <tr>
+                                        <th><i class="write square icon"></i></th>
+                                        <th colspan="15" style="text-align: left">农村生活污水治理地形图测绘数据入库系统</th>
+                                    </tr>
+                                    <tr style="text-align: center">
+                                        <th>序号</th>
+                                        <th>村庄姓名</th>
+                                        <th>是否开工</th>
+                                        <th>拟计划开工时间</th>
+                                        <th>切割路面</th>
+                                        <th>破碎路面</th>
+                                        <th>开发路面</th>
+                                        <th>埋管</th>
+                                        <th>回填土方</th>
+                                        <th>恢复路面</th>
+                                        <th>主检查井安装</th>
+                                        <th>支检查井安装</th>
+                                        <th>终端建设情况</th>
+
+                                        <th>操作</th>
+                                    </tr>
+                                    </thead>
+                                    <tbody  id="pbody">
+                                    </tbody>
+                                    <tfoot>
+                                    <tr>
+                                        <th colspan="2">
+                                        <span>
+                                            共有<strong id="totalCount1">0</strong>条数据,
+                                            共有<strong id="totalPage1">0</strong>页,
+                                            当前是第<strong id="pageNum1">0</strong>页
+										</span>
+                                        </th>
+                                        <th colspan="15">
+                                            <div id="pagination1" class="ui right floated pagination menu">
+                                            </div>
+                                        </th>
+                                    </tr>
+                                    </tfoot>
+                                </table>
+
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
+
+            <!--one   页面管理1-->
+            <div class="ui tab segment" data-tab="one" style="background-color: white">欢迎进入农村生活污水治理地形图测绘数据入库系统</div>
+            <!--two-->
+            <div class="ui tab segment" data-tab="two">欢迎进入菜单02</div>
+
+
+
+
+        </div>
+
+
+        <!-- 弹出层--添加&修改产品   排放值表-->
+        <div class="ui modal" id="elgsModal">
+            <i class="close icon"></i>
+            <div class="header">产权信息</div>
+            <div class="image content">
+                <!-- 添加一个表单 -->
+                <form class="ui form" id="elgsForm">
+                    <div class="field">
+                        <label>污染物或者项目名称</label><input type="text" name="pollutantOrProjectName" id="pollutantOrProjectName" placeholder="请录入污染物或者项目名称">
+                        <label>A标准</label><input type="text" name="standard" id="standard"  placeholder="请录入A标准">
+                        <label>B标准</label><input type="text" name="criterion" id="criterion" placeholder="请录入B标准">
+                        <label>C标准</label><input type="text" name="norm" id="norm" placeholder="请录入C标准">
+                        <label>污染物排放监控位置</label><input type="text" name="monitoringMosition" id="monitoringMosition" placeholder="请录入污染物排放监控位置">
+                    </div>
+                    <input id="saveBtn" class="ui button " type="button" value="保存"/>
+                    </style>
+                </form>
+            </div>
+        </div>
+
+        <!-- 弹出层--添加&修改产品  治理进度表-->
+        <div class="ui modal" id="progressModal">
+            <i class="close icon"></i>
+            <div class="header">治理信息</div>
+            <div class="image content">
+                <!-- 添加一个表单 -->
+                <form class="ui form" id="progressForm">
+                    <div class="field">
+                        <label>村庄姓名</label><input type="text" name="villageName" id="villageName" placeholder="请录入污染物或者项目名称">
+                        <label>是否开工</label><input type="text" name="startWork" id="startWork"  placeholder="请录入A标准">
+                        <label>拟计划开工时间</label><input type="date" name="plannedTime" id="plannedTime" placeholder="请录入B标准">
+                        <label>切割路面</label><input type="text" name="cutPavement" id="cutPavement" placeholder="请录入C标准">
+                        <label>破碎路面</label><input type="text" name="brokenPavement" id="brokenPavement" placeholder="请录入污染物排放监控位置">
+                        <label>开发路面</label><input type="text" name="developPavement" id="developPavement" placeholder="请录入污染物或者项目名称">
+                        <label>埋管</label><input type="text" name="buriedPipe" id="buriedPipe"  placeholder="请录入A标准">
+                        <label>回填土方</label><input type="text" name="backfillTheEarth" id="backfillTheEarth" placeholder="请录入B标准">
+                        <label>恢复路面</label><input type="text" name="pavementRestoration" id="pavementRestoration" placeholder="请录入C标准">
+                        <label>主检查井安装</label><input type="text" name="mainInspectionWell" id="mainInspectionWell" placeholder="请录入污染物排放监控位置">
+                        <label>支检查井安装</label><input type="text" name="branchCheckWell" id="branchCheckWell" placeholder="请录入污染物排放监控位置">
+                        <label>终端建设情况</label><input type="text" name="terminalConstruction" id="terminalConstruction" placeholder="请录入污染物排放监控位置">
+
+
+                    </div>
+                    <input id="saveBtn1" class="ui button " type="button" value="保存"/>
+                    </style>
+                </form>
+            </div>
+        </div>
+
+    </div>
+</div>
+<div style="position: fixed;bottom: 0px;right: 0px;  left:0px;">
+<h2 style=" text-align: center;  background-color:#708090 ; height: 50px;  ">
+    <div class="text-center " >版权所有：湖北玖誉土地评估勘测有限公司</div>
+</h2>
+</div>
+
+</body>
+<!--jqueryui的通用方法:
+初始化: $(".selector").accordion({...});
+初始化后, 如果要 调用方法/事件, 获得/设置option等, 这时, 同样的是使用 accordion方法. 也就是 accordion到底...->
+有三种api:-->
+<script type="text/javascript">
+    $(function () {
+        $('.ui.dropdown').dropdown({      //ui下拉列表
+            allowAdditions: true         //allowAdditions:true 允许添加新的菜单项
+        });
+        $(".tabular.menu .item").tab();
+        $('.ui.accordion').accordion({
+            selector: {
+                trigger: '.title'
+            }
+        });
+    });
+</script>
+
+</html>

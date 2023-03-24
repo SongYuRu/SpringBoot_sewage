@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #login_box {
+            width: 20%;
+            height: 400px;
+            background-color: #00000060;
+            margin: auto;
+            margin-top: 10%;
+            text-align: center;
+            border-radius: 10px;
+            padding: 50px 50px;
+        }
+        h2 {
+            color: #ffffff90;
+            margin-top: 5%;
+        }
+
+        span {
+            color: #fff;
+        }
+        input {
+            border: 0;
+            width: 60%;
+            font-size: 15px;
+            color: #fff;
+            background: transparent;
+            border-bottom: 2px solid #fff;
+            padding: 5px 10px;
+            outline: none;
+            margin-top: 10px;
+        }
+
+        button {
+            margin-top: 50px;
+            width: 60%;
+            height: 30px;
+            border-radius: 10px;
+            border: 0;
+            color: #fff;
+            text-align: center;
+            line-height: 30px;
+            font-size: 15px;
+            background-image: linear-gradient(to right, #30cfd0, #330867);
+        }
+
+
+
+        a {
+            color: #b94648;
+        }
+    </style>
+</head>
+
+<body>
+<div class="ui login-header">
+    <a href="javascript:;" onclick="shutdown()">
+        <i  class ="container" style="text-align: left;  color:black;">
+            <img class ="img" width="200" src="images\demo01.jpg" >
+        </i></a>
+</div>
+<div id="login_box">
+
+    <div class="ui three column stackable grid login-div"  style="margin-right: 150px;  text-align: center; ">
+        <div class="column" >
+            <form id="login" class="ui fluid form segment" action="./home.html"  style="font-size: 14px;  height: 350px;">
+                <div class="inline field"><strong style="color:red"></strong></div>
+                <div class="field" style="font-size: 14px;">
+                    <div>&nbsp;</div>
+                    <label class="" style="font-size: 14px;">用户名</label>
+                    <div class="ui left icon input" style="font-size: 14px; width: 400px;">
+                        <input type="text"  style="font-size: 14px;"name="username" id = "username" placeholder="Enter username" value="admin">
+                        <i class="user icon"></i>
+                        <div class="ui corner label">
+                            <i class="icon asterisk"></i>
+                        </div>
+                    </div>
+                </div>
+                <div class="field" style="font-size: 14px;">
+                    <div>&nbsp;</div>
+                    <label class="" style="font-size: 14px;">密码</label>
+                    <div class="ui left icon input"  style="width: 400px;">
+                        <!--value="admin" 只是在输入框里面显示-->
+                        <input type="password" name="password" id="password" placeholder="Enter password" value="admin"> <i class="lock icon"></i>
+                        <div class="ui corner label">
+                            <i class="icon asterisk"></i>
+                        </div>
+                    </div>
+                </div>
+                <div class="inline field" style="text-align: center;">
+
+                    <input type="button" value="登录" class="ui blue submit button">
+                </div>
+                <!--底部logo-->
+            </form>
+        </div>
+        <div class="column"></div>
+    </div>
+</div>
+</body>
+
+</html>
+
